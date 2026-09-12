@@ -1,0 +1,117 @@
+/* -*- c++ -*- */
+/*
+ * Copyright 2026 Christopher Hansen.
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
+#include "papGerch_impl.h"
+#include <gnuradio/io_signature.h>
+
+namespace gr {
+namespace newFM {
+
+using input_type = gr_complex;
+using output_type = gr_complex;
+papGerch::sptr papGerch::make(int blockSize, float thresh)
+{
+    return gnuradio::make_block_sptr<papGerch_impl>(blockSize, thresh);
+}
+
+
+/*
+ * The private constructor
+ */
+papGerch_impl::papGerch_impl(int blockSize, float thresh)
+    : gr::sync_block("papGerch",
+                     gr::io_signature::make(
+                         1 /* min inputs */, 1 /* max inputs */, sizeof(input_type)),
+                     gr::io_signature::make(
+                         1 /* min outputs */, 1 /*max outputs */, sizeof(output_type)))
+{
+  _blockSize = blockSize;
+  _thresh = thresh;
+  set_history(_blockSize/2 + 1);  // half blocks repeated
+  set_output_multiple(_blockSize);
+}
+
+/*
+ * Our virtual destructor.
+ */
+papGerch_impl::~papGerch_impl() {}
+
+void papGerch_impl::matVecProduct(gr_complex r[BLOCKSIZE], float w[BLOCKSIZE][BLOCKSIZE],
+			     gr_complex v[BLOCKSIZE])
+{
+  int a, b;
+
+  for (a = 0; a < BLOCKSIZE; a++)
+  {
+    r[a] = 0;
+    for (b = 0; b < BLOCKSIZE; b++)
+    {
+      r[a] += w[a][b] * v[b];
+    }
+  }
+}  
+
+void papGerch_impl::addVecProduct(gr_complex r[BLOCKSIZE], float d[BLOCKSIZE],
+			     gr_complex v[BLOCKSIZE], gr_complex u[BLOCKSIZE])
+{
+  int a;
+
+  for (a = 0; a < BLOCKSIZE; a++)
+  {
+    r[a] = d[a] * u[a] +  (1.0f - d[a]) * v[a];
+  }
+}  
+
+
+int papGerch_impl::work(int noutput_items,
+                        gr_vector_const_void_star& input_items,
+                        gr_vector_void_star& output_items)
+{
+    auto in = static_cast<const input_type*>(input_items[0]);
+    auto out = static_cast<output_type*>(output_items[0]);
+
+    int k, m, nSections;
+    
+    m = noutput_items;
+    nSections = 0;
+    
+    while (m > 0) {
+      for (k = 0; k < OVERLAP; k++) {
+	xP[k+OVERLAP] = xP[k];
+	xP0[k+OVERLAP] = xP0[k]; 
+	gr_complex cIn = in[k + nSections*OVERLAP];
+	if (abs(cIn) < _thresh) {
+	  xP[k] = 0.0;
+	  dVals[k] = 0.0;
+	}
+	else {
+	  xP[k] = cIn;
+	  dVals[k] = 1.0;
+	}
+	xP0[k] = xP[k];
+      }
+      
+      for (k = 0; k < NITERS; k++)
+      {
+	matVecProduct(zP, bNorm, xP);
+	addVecProduct(xP, dVals, zP, xP0);
+      }
+
+      for (k = 0; k < OVERLAP; k++)
+      {
+	out[k+nSections*OVERLAP] = xP[k];
+      }
+      nSections++;
+      m -= OVERLAP;
+    }
+    
+    // Tell runtime system how many output items we produced.
+    return noutput_items;
+}
+
+} /* namespace newFM */
+} /* namespace gr */

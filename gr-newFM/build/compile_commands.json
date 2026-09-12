@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/home/chris/Dropbox/Soundtrace/gnuradio/gr-newFM/build/lib",
+  "command": "/usr/bin/c++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -DFMT_SHARED -DGR_CTRLPORT -DGR_MPLIB_GMP -DGR_PERFORMANCE_COUNTERS -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -Dgnuradio_newFM_EXPORTS -I/home/chris/Dropbox/Soundtrace/gnuradio/gr-newFM/lib/../include  -fvisibility=hidden -Wsign-compare -Wall -Wno-uninitialized -O3 -DNDEBUG -std=c++17 -fPIC -o CMakeFiles/gnuradio-newFM.dir/papGerch_impl.cc.o -c /home/chris/Dropbox/Soundtrace/gnuradio/gr-newFM/lib/papGerch_impl.cc",
+  "file": "/home/chris/Dropbox/Soundtrace/gnuradio/gr-newFM/lib/papGerch_impl.cc",
+  "output": "lib/CMakeFiles/gnuradio-newFM.dir/papGerch_impl.cc.o"
+},
+{
+  "directory": "/home/chris/Dropbox/Soundtrace/gnuradio/gr-newFM/build/python/newFM/bindings",
+  "command": "/usr/bin/c++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_DATE_TIME_NO_LIB -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB -DBOOST_REGEX_DYN_LINK -DBOOST_REGEX_NO_LIB -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK -DBOOST_UNIT_TEST_FRAMEWORK_NO_LIB -DFMT_SHARED -DGR_CTRLPORT -DGR_MPLIB_GMP -DGR_PERFORMANCE_COUNTERS -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -DnewFM_python_EXPORTS -I/home/chris/Dropbox/Soundtrace/gnuradio/gr-newFM/build/python/newFM/bindings -I/home/chris/Dropbox/Soundtrace/gnuradio/gr-newFM/python/newFM/bindings/../../../lib -I/home/chris/Dropbox/Soundtrace/gnuradio/gr-newFM/python/newFM/bindings/../../../include -I/home/chris/Dropbox/Soundtrace/gnuradio/gr-newFM/lib/../include -isystem /usr/include/python3.12 -isystem /usr/lib/python3/dist-packages/numpy/core/include  -fvisibility=hidden -Wsign-compare -Wall -Wno-uninitialized -O3 -DNDEBUG -std=c++17 -fPIC -fvisibility=hidden -Wno-unused-variable -flto -fno-fat-lto-objects -o CMakeFiles/newFM_python.dir/papGerch_python.cc.o -c /home/chris/Dropbox/Soundtrace/gnuradio/gr-newFM/python/newFM/bindings/papGerch_python.cc",
+  "file": "/home/chris/Dropbox/Soundtrace/gnuradio/gr-newFM/python/newFM/bindings/papGerch_python.cc",
+  "output": "python/newFM/bindings/CMakeFiles/newFM_python.dir/papGerch_python.cc.o"
+},
+{
+  "directory": "/home/chris/Dropbox/Soundtrace/gnuradio/gr-newFM/build/python/newFM/bindings",
+  "command": "/usr/bin/c++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_DATE_TIME_NO_LIB -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB -DBOOST_REGEX_DYN_LINK -DBOOST_REGEX_NO_LIB -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK -DBOOST_UNIT_TEST_FRAMEWORK_NO_LIB -DFMT_SHARED -DGR_CTRLPORT -DGR_MPLIB_GMP -DGR_PERFORMANCE_COUNTERS -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -DnewFM_python_EXPORTS -I/home/chris/Dropbox/Soundtrace/gnuradio/gr-newFM/build/python/newFM/bindings -I/home/chris/Dropbox/Soundtrace/gnuradio/gr-newFM/python/newFM/bindings/../../../lib -I/home/chris/Dropbox/Soundtrace/gnuradio/gr-newFM/python/newFM/bindings/../../../include -I/home/chris/Dropbox/Soundtrace/gnuradio/gr-newFM/lib/../include -isystem /usr/include/python3.12 -isystem /usr/lib/python3/dist-packages/numpy/core/include  -fvisibility=hidden -Wsign-compare -Wall -Wno-uninitialized -O3 -DNDEBUG -std=c++17 -fPIC -fvisibility=hidden -Wno-unused-variable -flto -fno-fat-lto-objects -o CMakeFiles/newFM_python.dir/python_bindings.cc.o -c /home/chris/Dropbox/Soundtrace/gnuradio/gr-newFM/python/newFM/bindings/python_bindings.cc",
+  "file": "/home/chris/Dropbox/Soundtrace/gnuradio/gr-newFM/python/newFM/bindings/python_bindings.cc",
+  "output": "python/newFM/bindings/CMakeFiles/newFM_python.dir/python_bindings.cc.o"
+}
+]

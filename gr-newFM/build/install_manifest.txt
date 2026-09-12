@@ -1,0 +1,14 @@
+/usr/local/lib/cmake/gnuradio-newFM/gnuradio-newFMConfig.cmake
+/usr/local/include/gnuradio/newFM/api.h
+/usr/local/include/gnuradio/newFM/papGerch.h
+/usr/local/lib/x86_64-linux-gnu/libgnuradio-newFM.so.1.0.0.0
+/usr/local/lib/x86_64-linux-gnu/libgnuradio-newFM.so.1.0.0
+/usr/local/lib/x86_64-linux-gnu/libgnuradio-newFM.so
+/usr/local/lib/cmake/gnuradio-newFM/gnuradio-newFMTargets.cmake
+/usr/local/lib/cmake/gnuradio-newFM/gnuradio-newFMTargets-release.cmake
+/usr/local/lib/cmake/gnuradio-newFM/gnuradio-newFMConfig.cmake
+/usr/local/lib/python3.12/dist-packages/gnuradio/newFM/__init__.py
+/usr/local/lib/python3.12/dist-packages/gnuradio/newFM/__init__.pyc
+/usr/local/lib/python3.12/dist-packages/gnuradio/newFM/__init__.pyo
+/usr/local/lib/python3.12/dist-packages/gnuradio/newFM/newFM_python.cpython-312-x86_64-linux-gnu.so
+/usr/local/share/gnuradio/grc/blocks/newFM_papGerch.block.yml

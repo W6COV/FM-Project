@@ -1,0 +1,46 @@
+/* -*- c++ -*- */
+/*
+ * Copyright 2026 Christopher Hansen.
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
+#ifndef INCLUDED_NEWFM_PAPGERCH_IMPL_H
+#define INCLUDED_NEWFM_PAPGERCH_IMPL_H
+
+#include <gnuradio/newFM/papGerch.h>
+
+#define BLOCKSIZE 256
+
+namespace gr {
+namespace newFM {
+
+class papGerch_impl : public papGerch
+{
+private:
+  int _blockSize;
+  float _thresh;
+  gr_complex cIn;
+  gr_complex zP[BLOCKSIZE];
+  gr_complex xP[BLOCKSIZE];
+  gr_complex xP0[BLOCKSIZE];
+  void matVecProduct(gr_complex r[BLOCKSIZE], float w[BLOCKSIZE][BLOCKSIZE],
+		gr_complex v[BLOCKSIZE]);
+  void addVecProduct(gr_complex r[BLOCKSIZE], float d[BLOCKSIZE],
+		gr_complex v[BLOCKSIZE], gr_complex u[BLOCKSIZE]);
+  
+
+public:
+    papGerch_impl(int blockSize, float thresh);
+    ~papGerch_impl();
+
+    // Where all the action really happens
+    int work(int noutput_items,
+             gr_vector_const_void_star& input_items,
+             gr_vector_void_star& output_items);
+};
+
+} // namespace newFM
+} // namespace gr
+
+#endif /* INCLUDED_NEWFM_PAPGERCH_IMPL_H */

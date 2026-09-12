@@ -1,0 +1,8 @@
+# Hashes of file build rules.
+499c650dd006db962a78da11b498276b CMakeFiles/uninstall
+42e527565a1157cd65ba680d7466b8fe python/newFM/CMakeFiles/copy_module_for_tests
+c36c97a14be8058cbe440573c99feb3c python/newFM/CMakeFiles/pygen_python_newFM_e417cd4dd55d944cbfeb74d765981a7d
+a02785422d4ce21587772a5531779455 python/newFM/__init__.pyc
+8eafbab1aa380e01d6bced28d94d19ea python/newFM/__init__.pyo
+2466c6bcadd42ef7bce8110b354be5ed python/newFM/bindings/CMakeFiles/newFM_docstrings
+078cd47d00f12b97a80f0b676902acde python/newFM/bindings/docstring_status
